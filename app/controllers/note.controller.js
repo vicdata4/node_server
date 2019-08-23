@@ -102,7 +102,7 @@ exports.delete = (req, res) => {
                 message: "Note not found with id " + req.params.noteId
             });
         }
-        res.send({message: "Note deleted successfully!"});
+        res.send({message: "Note deleted successfully!", id: req.params.noteId });
     }).catch(err => {
         if(err.kind === 'ObjectId' || err.name === 'NotFound') {
             return res.status(404).send({
