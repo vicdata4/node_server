@@ -1,15 +1,12 @@
 # node_server
 
-node version v10.15.3
+node v10.15.3
+npm v6.4.1
+
+Run server:
 
 npm install
 
 node server.js
-
-
-Console:
-
-Server is listening on port 3000
-Successfully connected to the database
 
 
