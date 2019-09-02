@@ -10,10 +10,13 @@ app.use(bodyParser.urlencoded({ extended: true }))
 // parse requests of content-type - application/json
 app.use(bodyParser.json())
 
+//res.sendFile(__dirname + '/client/index.html');
+app.use(express.static('../public'));
+
 app.use(function (req, res, next) {
 
     // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:2900');
+    res.setHeader('Access-Control-Allow-Origin', 'https://seed-project.dev');
 
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
