@@ -21,7 +21,7 @@
 
 ## Data Base config:
 
-Create `db.config.js` file in `/` directory and include your host adress.
+Create `db.config.js` file in `/` directory and include your host address.
 
 Example
 ```
