@@ -1,12 +1,39 @@
-# node_server
+# server
 
-node v10.15.3
-npm v6.4.1
+#### Requirements
 
-Run server:
+* node v10.15.3</br>
+* npm v6.4.1
 
-npm install
+#### Dependencies
 
-node server.js
+* node-express ^4.17.1</br>
+* mongoose ^5.6.9
+
+
+## Run server
+
+`git clone https://github.com/vicdata4/node_server.git`
+
+`npm install`
+
+`node server.js`
+
+## Data Base config:
+
+Create `db.config.js` file in `/` directory and include your host adress.
+
+Example
+```
+module.exports = {
+    url: 'mongodb://localhost:27017/dbname'
+}
+```
+
+
+
+
+
+
 
 
