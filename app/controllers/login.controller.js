@@ -1,5 +1,8 @@
+const Login = require('../models/login.model.js');
+
 exports.userExist = (req, res) => {
-    Login.findOne({'mail': req.params.mail, 'password': req.params.password })
+    console.log('***', req.body);
+    Login.findOne({'mail': req.body.mail, 'password': req.body.password })
     .then(user => {
         if(!user) {
             return res.status(404).send({
