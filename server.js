@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 //res.sendFile(__dirname + '/client/index.html');
-app.use(express.static('../public'));
+app.use(express.static('../public/build'));
 
 app.use(function (req, res, next) {
 
@@ -48,9 +48,11 @@ mongoose.connect(dbConfig.url, {
     process.exit();
 });
 
-// define a simple route
-app.get('/', (req, res) => {
-    res.json({"message": "Welcome to EasyNotes application. Take notes quickly. Organize and keep track of all your notes."});
+app.get('*', (req, res) => {
+    console.log(req.params);
+    if(req.params['0'] !== '/notes'){
+        res.sendFile('/Users/victorghaya/Documents/roll/rollLit/public/build/index.html');
+    }
 });
 
 // listen for requests
