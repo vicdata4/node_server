@@ -1,18 +1,17 @@
 module.exports = (app) => {
     const notes = require('../controllers/note.controller.js');
+    const middleware = require('../../app/middleware/auth.js');
+    const auth = middleware.verify;
 
-    // Create a new Note
-    app.post('/notes', notes.create);
+    app.get('/auth', middleware.auth);
+    app.post('/login', middleware.login);
+    // app.get('/login', middleware.login);
 
-    // Retrieve all Notes
-    app.get('/notes', notes.findAll);
-
-    // Retrieve a single Note with noteId
     app.get('/notes/:noteId', notes.findOne);
-
-    // Update a Note with noteId
     app.put('/notes/:noteId', notes.update);
-
-    // Delete a Note with noteId
-    app.delete('/notes/:noteId', notes.delete);
-}
+    
+    // ENDPOINTS WITH REQUIRED AUTHENTICATION
+    app.post('/notes', auth, notes.create);
+    app.get('/notes', auth, notes.findAll);
+    app.delete('/notes/:noteId', auth, notes.delete);
+};
