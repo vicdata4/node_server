@@ -21,15 +21,18 @@
 
 ## Data Base config:
 
-Create `config.js` file in `/` directory and include your host address.
+Create `config.js` file in `/` directory and include your config params.
 
 Example
 ```
+const path = require('path');
+
 module.exports = {
-    url: 'mongodb://localhost:27017/dbname'
-    secret: 'you-private-key',
-    prefix: 'token-prefix',
-    origin: 'origin-url',
+    url: 'db-adress',
+    secret: 'auth-private-key',
+    prefix: 'prefix-key',
+    publicPath: 'public-build-path',
+    origin: 'origin-adress'
 }
 ```
 
