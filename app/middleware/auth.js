@@ -18,7 +18,7 @@ exports.login = async (req, res) => {
         const token = jwt.sign({ sub: user._id }, config.secret, { expiresIn: '1h' });
         res.send({ ...user, token });
     } else {
-        res.status(404).send({ error: true, message: 'User not found' });
+        res.status(200).send({ error: true, message: 'User not found' });
     }
 };
 
